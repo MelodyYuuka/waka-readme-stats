@@ -2,7 +2,7 @@
 Readme Development Metrics With waka time progress
 """
 from asyncio import run
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from typing import Dict
 from urllib.parse import quote
 
@@ -16,7 +16,6 @@ from manager_debug import init_debug_manager, DebugManager as DBM
 from graphics_chart_drawer import create_loc_graph, GRAPH_PATH
 from yearly_commit_calculator import calculate_commit_data
 from graphics_list_formatter import make_list, make_commit_day_time_list, make_language_per_repo_list
-
 
 async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
     """
@@ -189,7 +188,8 @@ async def get_stats() -> str:
 
     if EM.SHOW_UPDATED_DATE:
         DBM.i("Adding last updated time...")
-        stats += f"\n Last Updated on {datetime.now().strftime(EM.UPDATED_DATE_FORMAT)} UTC"
+        utc8 = timezone(timedelta(hours=8))
+        stats += f"\n Last Updated on {datetime.now(utc8).strftime(EM.UPDATED_DATE_FORMAT)} UTC+8"
 
     DBM.g("Stats for README collected!")
     return stats
