@@ -1,7 +1,14 @@
+<!--START_SECTION:navbar-->
+<div align="center">
+  <a href="README.md">🇺🇸 English</a> | <a href="locales/README.de.md">🇩🇪 Deutsch</a> | <a href="locales/README.es.md">🇪🇸 Español</a> | <a href="locales/README.fr.md">🇫🇷 Français</a> | <a href="locales/README.hi.md">🇮🇳 हिंदी</a> | <a href="locales/README.ja.md">🇯🇵 日本語</a> | <a href="locales/README.ko.md">🇰🇷 한국어</a> | <a href="locales/README.pt.md">🇵🇹 Português</a> | <a href="locales/README.ru.md">🇷🇺 Русский</a> | <a href="locales/README.zh.md">🇨🇳 中文</a>
+</div>
+<!--END_SECTION:navbar-->
+
+---
 > [!IMPORTANT]
 > We are looking for translators for this project. \
 > Any kind of help would be greatly appreciated. \
-> Please see issue https://github.com/anmol098/waka-readme-stats/issues/23 if you would like to help!
+> Please see issue <https://github.com/anmol098/waka-readme-stats/issues/23> if you would like to help!
 
 # Dev Metrics in README with added feature flags 🎌
 
@@ -14,7 +21,7 @@
   <h3 align="center">📌✨Awesome README Stats</h3>
 </p>
 
-----
+---
 
 <p align="center">
    <img src="https://img.shields.io/badge/language-python-blue?style"/>
@@ -23,6 +30,7 @@
    <img src="https://img.shields.io/github/forks/anmol098/waka-readme-stats"/>
    <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
 </p>
+
 <p align="center">
    Are you an early 🐤 or a night 🦉?
    <br/>
@@ -46,9 +54,11 @@
     - You can refer [here](#new-to-wakatime), if you're new to WakaTime.
 3. You'll need a GitHub API Token with `repo` and `user` scope from [here](https://github.com/settings/tokens) if you're running the action to get commit metrics.
    - You can use [this](#profile-repository) example to work it out.
+
 > [!NOTE]
 > Enabling the `repo` scope seems **DANGEROUS**, \
 > but this GitHub Action only accesses your commit timestamps and the number of lines of code added or deleted in repositories that you contributed to.
+
 4. You need to save the WakaTime API Key and the GitHub API Token in the repository secrets. You can find that in the Settings of your repository. \
   Be sure to save those as the following:
     - WakaTime API Key as `WAKATIME_API_KEY=<your wakatime API Key>`
@@ -103,6 +113,7 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 ```
+
 - Now you can commit and wait for it to run automatically, or you can also trigger to run it to see the result now. Just go to the `Actions` in your repo, select your `Profile Readme Development Stats` workflow and click `Run workflow`. Now wait for a minute or two and you will see your changes.
 
 ## Extras
@@ -152,7 +163,8 @@ The `SHOW_PROFILE_VIEWS` flag can be set to `False` to hide **Profile Views**
 
 The `SHOW_COMMIT` flag can be set to `False` to hide the commit stats.
 
-**I'm an early 🐤** 
+**I'm an early 🐤**
+
 ```text
 🌞 Morning    95 commits     ███████░░░░░░░░░░░░░░░░░░   30.55% 
 🌆 Daytime    78 commits     ██████░░░░░░░░░░░░░░░░░░░   25.08% 
@@ -163,7 +175,7 @@ The `SHOW_COMMIT` flag can be set to `False` to hide the commit stats.
 
 The `SHOW_DAYS_OF_WEEK` flag can be set to `False` to hide the commits made on the different days of the week.
 
-📅 **I'm Most Productive on Sundays** 
+📅 **I'm Most Productive on Sundays**
 
 ```text
 Monday       50 commits     ███░░░░░░░░░░░░░░░░░░░░░░   13.19% 
@@ -186,7 +198,6 @@ Markdown                 1 hr 9 mins         ███░░░░░░░░�
 Python                   22 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   4.32%
 XML                      8 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   1.62%
 ```
-
 
 The `SHOW_OS` flag can be set to `False` to hide your OS details.
 
@@ -223,7 +234,7 @@ PyCharm                  23 mins             █░░░░░░░░░░�
 
 The `SHOW_LANGUAGE_PER_REPO` flag can be set to `False` to hide the number of repositories in different programming languages and frameworks.
 
-**I mostly code in Vue** 
+**I mostly code in Vue**
 
 ```text
 Vue          8 repos        ██████░░░░░░░░░░░░░░░░░░░   25.0% 
@@ -237,37 +248,53 @@ CSS          2 repos        █░░░░░░░░░░░░░░░░�
 ```
 
 The `SHOW_SHORT_INFO` flag can be set to `False` to hide the short fun fact info of a user.
+
 > [!NOTE]
 > This section requires a Personal Access Token (PAT) with the `user` scope, otherwise the data shown here will be incorrect.
 
-**🐱 My GitHub Data** 
+**🐱 My GitHub Data**
 
 > 🏆 433 Contributions in year 2020
- > 
-> 📦 Used 292.3 kB in GitHub's Storage 
- > 
+ >
+> 📦 Used 292.3 kB in GitHub's Storage
+ >
 > 💼 Opted to Hire
- > 
-> 📜 25 Public Repository 
- > 
-> 🔑 15 Owned Private Repository 
+ >
+> 📜 25 Public Repository
+ >
+> 🔑 15 Owned Private Repository
 
 The `SHOW_LOC_CHART` flag can be set to `False` to hide the lines of code written in different quarters of different years.
 
 The `IGNORED_REPOS` flag can be set to `"waka-readme-stats, my-first-repo"` (just an example) to ignore some repos you don’t want to be counted.
 
+The `MAX_REPOS` flag can be set to limit how many GitHub repositories are fetched for analysis (default: `0` = unlimited). This can be useful to speed up runs for accounts with many repos.
+
+If you see examples using `MAX_CAP`, that is a deprecated alias for `MAX_REPOS`.
+
+The `WAKATIME_API_URL` flag can be set if you are hosting your own wakatime compliant backend like [wakapi](https://github.com/muety/wakapi). You only have to supply your base url like so `https://your-own-wakapi.dev/api/`
+
 The `SYMBOL_VERSION` flag can be set for the symbol for the progress bar (default: `1`).
+
 | Version | Done block | Empty block |
-|-------- | ---------- | ----------- |
+| ------- | ---------- | ----------- |
 |    1    |      █     |       ░     |
 |    2    |      ⣿     |       ⣀     |
 |    3    |      ⬛    |       ⬜    |
 
-The `DEBUG_LOGGING` flag can be set to increase the GitHub Action's output verbosity, by default equals internal runner debug property
+The `DEBUG_LOGGING` flag can be set to increase the GitHub Action's output verbosity, The default is the internal runner's debug property.
+The `BADGE_STYLE` flag defines the style for the generated badges and can be set to `flat`, `flat-square`, `plastic`, `for-the-badge`, or `social`.
+|    Badge Style    |                                             Preview                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+|       `flat`      | ![Badge Style `flat`](https://img.shields.io/badge/Badge-Style-blue?style=flat)                   |
+|   `flat-square`   | ![Badge Style `flat-square`](https://img.shields.io/badge/Badge-Style-blue?style=flat-square)     |
+|     `plastic`     | ![Badge Style `plastic`](https://img.shields.io/badge/Badge-Style-blue?style=plastic)             |
+|  `for-the-badge`  | ![Badge Style `for-the-badge`](https://img.shields.io/badge/Badge-Style-blue?style=for-the-badge) |
+|      `social`     | ![Badge Style `social`](https://img.shields.io/badge/Badge-Style-blue?style=social)               |
 
 **Timeline**
 
-![Chart not found](https://raw.githubusercontent.com/anmol098/anmol098/master/charts/bar_graph.png) 
+![Timeline Chart](https://raw.githubusercontent.com/anmol098/anmol098/master/charts/bar_graph.png)
 
 ## :sparkling_heart: Support the project
 
@@ -286,169 +313,173 @@ Thanks! :heart:
 
 # Contributing
 
-Contributions are welcome ♥! Please share any features, and add unit tests! Use the pull request and issue systems to contribute.
+Contributions are welcome ♥!
+
+Please share any features, and add unit tests! Use the pull request and issue systems to contribute.
 
 # Selected Contributors
 
 1. [Anmol Pratap Singh](https://github.com/anmol098): Maintainer
 2. [Alexander Sergeev](https://github.com/pseusys): Maintainer
-3. [Aravind V. Nair](https://github.com/aravindvnair99): Maintainer
-4. [Prabhat Singh](https://github.com/prabhatdev): For code timeline graph [#18](https://github.com/anmol098/waka-readme-stats/pull/18)
-5. [Hedy Li](https://github.com/hedythedev): For Pull Request [#34](https://github.com/anmol098/waka-readme-stats/pull/34) and [#23](https://github.com/anmol098/waka-readme-stats/pull/23)
-6. [Pedro Torres](https://github.com/Corfucinas): For Pull Request [#29](https://github.com/anmol098/waka-readme-stats/pull/29)
-7. [Aaron Meese](https://github.com/ajmeese7): For Pull Request [#45](https://github.com/anmol098/waka-readme-stats/pull/45)
-8. [Arnav Jindal](https://github.com/Daggy1234): For Pull Request [#48](https://github.com/anmol098/waka-readme-stats/pull/48)
-9. [Daniel Rowe](https://github.com/DanRowe): For Pull Request [#57](https://github.com/anmol098/waka-readme-stats/pull/57)
-10. [Ss5h](https://github.com/tlatkdgus1): For adding support for natural sentence writing for translation [#136](https://github.com/anmol098/waka-readme-stats/pull/136)
+3. [DataBoySu](https://github.com/DataBoySu): Maintainer
+4. [okcoder1](https://github.com/ok-coder1): Maintainer
+5. [Aravind V. Nair](https://github.com/aravindvnair99): Maintainer
+6. [Prabhat Singh](https://github.com/prabhatdev): For code timeline graph [#18](https://github.com/anmol098/waka-readme-stats/pull/18)
+7. [Hedy Li](https://github.com/hedyhli): For Pull Request [#34](https://github.com/anmol098/waka-readme-stats/pull/34) and [#23](https://github.com/anmol098/waka-readme-stats/pull/23)
+8. [Pedro Torres](https://github.com/Corfucinas): For Pull Request [#29](https://github.com/anmol098/waka-readme-stats/pull/29)
+9. [Aaron Meese](https://github.com/ajmeese7): For Pull Request [#45](https://github.com/anmol098/waka-readme-stats/pull/45)
+10. [Arnav Jindal](https://github.com/Daggy1234): For Pull Request [#48](https://github.com/anmol098/waka-readme-stats/pull/48)
+11. [Daniel Rowe](https://github.com/DanRowe): For Pull Request [#57](https://github.com/anmol098/waka-readme-stats/pull/57)
+12. [Ss5h](https://github.com/tlatkdgus1): For adding support for natural sentence writing for translation [#136](https://github.com/anmol098/waka-readme-stats/pull/136)
 
 <details>
+
 <summary>Special mention for those who are currently making their profile readme more awesome :smile: :tada:</summary>
 
-  - [Stanislas](https://github.com/angristan)
+- [Stanislas](https://github.com/angristan)
   
-  - [Pratik Kumar](https://github.com/pr2tik1)
+- [Pratik Kumar](https://github.com/pr2tik1)
   
-  - [Vladimir](https://github.com/sergeev-vn)
+- [Vladimir](https://github.com/sergeev-vn)
 
-  - [Pedro Torres](https://github.com/Corfucinas)
+- [Pedro Torres](https://github.com/Corfucinas)
   
-  - [leverglowh](https://github.com/leverglowh)
+- [leverglowh](https://github.com/leverglowh)
   
-  - [patdc](https://github.com/patdc)
+- [patdc](https://github.com/patdc)
   
-  - [极客挖掘机](https://github.com/meteor1993)
+- [极客挖掘机](https://github.com/meteor1993)
   
-  - [Fan()](https://github.com/Fanduzi)
+- [Fan()](https://github.com/Fanduzi)
   
-  - [Miller Camilo Vega](https://github.com/minoveaz)
+- [Miller Camilo Vega](https://github.com/minoveaz)
   
-  - [XLor](https://github.com/yjl9903)
+- [XLor](https://github.com/yjl9903)
   
-  - [Jesse Okeya](https://github.com/jesseokeya)
+- [Jesse Okeya](https://github.com/jesseokeya)
   
-  - [anaiel](https://github.com/anaiel)
+- [anaiel](https://github.com/anaiel)
   
-  - [Dipto Mondal](https://github.com/diptomondal007)
+- [Dipto Mondal](https://github.com/diptomondal007)
   
-  - [Jerry F. Zhang](https://github.com/JerryFZhang)
+- [Jerry F. Zhang](https://github.com/JerryFZhang)
   
-  - [Karan Singh](https://github.com/karan06126)
+- [Karan Singh](https://github.com/karan06126)
   
-  - [Erwin Lejeune](https://github.com/guilyx)
+- [Erwin Lejeune](https://github.com/guilyx)
   
-  - [Manuel Cepeda](https://github.com/mecm1993)
+- [Manuel Cepeda](https://github.com/mecm1993)
   
-  - [Jonathan S](https://github.com/TGTGamer)
+- [Jonathan S](https://github.com/TGTGamer)
   
-  - [Tsotne Gvadzabia](https://github.com/RockiRider)
+- [Tsotne Gvadzabia](https://github.com/RockiRider)
   
-  - [Miray](https://github.com/MirayXS)
+- [Miray](https://github.com/MirayXS)
   
-  - [Varad Patil](https://github.com/varadp2000)
+- [Varad Patil](https://github.com/varadp2000)
   
-  - [Prabhat Singh](https://github.com/prabhatdev)
+- [Prabhat Singh](https://github.com/prabhatdev)
   
-  - [Nikhil](https://github.com/nikhilgorantla)
+- [Nikhil](https://github.com/nikhilgorantla)
   
-  - [大白](https://github.com/2720851545)
+- [大白](https://github.com/2720851545)
   
-  - [Du Yizhuo](https://github.com/dyzdyz010)
+- [Du Yizhuo](https://github.com/dyzdyz010)
   
-  - [Manas Talukdar](https://github.com/manastalukdar)
+- [Manas Talukdar](https://github.com/manastalukdar)
   
-  - [Simranjeet Singh](https://github.com/smrnjeet222)
+- [Simranjeet Singh](https://github.com/smrnjeet222)
   
-  - [Aaron Meese](https://github.com/ajmeese7)
+- [Aaron Meese](https://github.com/ajmeese7)
   
-  - [Prasad Narkhede](https://github.com/p014ri5)
+- [Prasad Narkhede](https://github.com/p014ri5)
   
-  - [Manish Kushwaha](https://github.com/tzmanish)
+- [Manish Kushwaha](https://github.com/tzmanish)
   
-  - [Hedy Li](https://github.com/hedythedev)
+- [Hedy Li](https://github.com/hedythedev)
   
-  - [SHIMIZU Taku](https://github.com/takuan-osho)
+- [SHIMIZU Taku](https://github.com/takuan-osho)
   
-  - [Jude Wilson](https://github.com/mr-winson)
+- [Jude Wilson](https://github.com/mr-winson)
   
-  - [Daniel Rowe](https://github.com/DanRowe)
+- [Daniel Rowe](https://github.com/DanRowe)
   
-  - [Muhammad Hassan Ahmed](https://github.com/hassan11196)
+- [Muhammad Hassan Ahmed](https://github.com/hassan11196)
   
-  - [Alessandro Maggio](https://github.com/Tkd-Alex)
+- [Alessandro Maggio](https://github.com/Tkd-Alex)
   
-  - [Siddharth Gupta](https://github.com/siddg97)
+- [Siddharth Gupta](https://github.com/siddg97)
   
-  - [Dev-Mehta](https://github.com/Dev-Mehta/)
+- [Dev-Mehta](https://github.com/Dev-Mehta/)
   
-  - [> EdgyCoder ✌](https://github.com/edgycoder)
+- [> EdgyCoder ✌](https://github.com/edgycoder)
   
-  - [Korel Kashri](https://github.com/korelkashri)
+- [Korel Kashri](https://github.com/korelkashri)
   
-  - [Gustavo Barbosa](https://github.com/gusbdev)
+- [Gustavo Barbosa](https://github.com/gusbdev)
 
-  - [eagleanurag](https://github.com/eagleanurag)
+- [eagleanurag](https://github.com/eagleanurag)
   
-  - [Aravind V. Nair](https://github.com/aravindvnair99)
+- [Aravind V. Nair](https://github.com/aravindvnair99)
   
-  - [Raman Preet Singh](https://github.com/raman08)
+- [Raman Preet Singh](https://github.com/raman08)
   
-  - [Hayat Tamboli](https://github.com/hayat-tamboli)
+- [Hayat Tamboli](https://github.com/hayat-tamboli)
   
-  - [Henry Boisdequin](https://github.com/henryboisdequin)
-   
-  - [Raman Preet Singh](https://github.com/raman08)
+- [Henry Boisdequin](https://github.com/henryboisdequin)
+
+- [Raman Preet Singh](https://github.com/raman08)
   
-  - [Aadit Kamat](https://github.com/aaditkamat)
-    
-  - [Subhalingam D](https://github.com/subhalingamd)
+- [Aadit Kamat](https://github.com/aaditkamat)
+
+- [Subhalingam D](https://github.com/subhalingamd)
   
-  - [Adil Akhmetov](https://github.com/weeebdev)
+- [Adil Akhmetov](https://github.com/weeebdev)
   
-  - [Isaac Maldonado](https://github.com/einjunge99)
+- [Isaac Maldonado](https://github.com/einjunge99)
   
-  - [Syed Faateh Sultan Kazmi](https://github.com/faatehsultan)
+- [Syed Faateh Sultan Kazmi](https://github.com/faatehsultan)
 
-  - [Shreyam Maity](https://github.com/ShreyamMaity)
+- [Shreyam Maity](https://github.com/ShreyamMaity)
 
-  - [Sufiane](https://github.com/sufiane)
+- [Sufiane](https://github.com/sufiane)
 
-  - [Muhammad Bilal](https://github.com/BilalJaved15)
+- [Muhammad Bilal](https://github.com/BilalJaved15)
 
-  - [Waterdev](https://github.com/UnrealValentin)
+- [Waterdev](https://github.com/UnrealValentin)
   
-  - [Aditya Prasad S](https://github.com/adityaprasad502)
+- [Aditya Prasad S](https://github.com/adityaprasad502)
   
-  - [C. Vinicius Santos](https://github.com/c-viniciussantos)
+- [C. Vinicius Santos](https://github.com/c-viniciussantos)
   
-  - [James Tufarelli](https://github.com/Minituff)
+- [James Tufarelli](https://github.com/Minituff)
   
-  - [Muhammad Bilal](https://github.com/BilalJaved15)
+- [Muhammad Bilal](https://github.com/BilalJaved15)
 
-  - [Wyatt Walsh](https://www.github.com/wyattowalsh)
+- [Wyatt Walsh](https://www.github.com/wyattowalsh)
 
-  - [Nithin Balaji](https://github.com/thenithinbalaji)
+- [Nithin Balaji](https://github.com/thenithinbalaji)
 
-  - [John Cortés](https://github.com/johncortes117)
+- [John Cortés](https://github.com/johncortes117)
 
-  - [Taha Parker](https://github.com/tahayparker/)
+- [Taha Parker](https://github.com/tahayparker/)
 
-  - [Yang An Yi](https://github.com/yanganyi)
+- [Yang An Yi](https://github.com/yanganyi)
 
-  - [Mamdud Hasan](https://github.com/n8fury)
+- [Mamdud Hasan](https://github.com/n8fury)
 
-  - [Satyam Vyas](https://github.com/SatyamVyas04)
+- [Satyam Vyas](https://github.com/SatyamVyas04)
 
-  - [Yash Naravade](https://github.com/yashnaravade)
+- [Yash Naravade](https://github.com/yashnaravade)
 
-  - [Luicen Loua](https://github.com/lucien-loua)
+- [Luicen Loua](https://github.com/lucien-loua)
 
-  
+- [DataBoySu](https://github.com/DataBoySu)
 
 </details>
 
 - And you! If ever you are using it right now and you are not on the list please tell us by sending a [Special Mention](https://github.com/anmol098/waka-readme-stats/issues/new/choose) issue! :blush: \
   We will be glad to add you in the list.
-
 
 Made with :heart: and Python 🐍.
 
@@ -457,8 +488,7 @@ Made with :heart: and Python 🐍.
 > [Awesome Pinned Gists](https://github.com/matchai/awesome-pinned-gists) <br/>
 > [athul/waka-readme](https://github.com/athul/waka-readme)
 
-### This project needs a **star** ⭐ from you ♥.
-
+### This project needs a **star** ⭐ from you ♥
 
 ## Stargazers over time
 

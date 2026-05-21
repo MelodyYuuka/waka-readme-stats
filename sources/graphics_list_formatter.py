@@ -130,14 +130,18 @@ def make_language_per_repo_list(repositories: Dict) -> str:
     language_count = dict()
     repos_with_language = [repo for repo in repositories if repo["primaryLanguage"] is not None]
     for repo in repos_with_language:
-        language = repo["primaryLanguage"]["name"]
-        language_count[language] = language_count.get(language, {"count": 0})
-        language_count[language]["count"] += 1
+        if repo["name"] not in EM.IGNORED_REPOS:
+            language = repo["primaryLanguage"]["name"]
+            language_count[language] = language_count.get(language, {"count": 0})
+            language_count[language]["count"] += 1
 
     names = list(language_count.keys())
     texts = [f"{language_count[lang]['count']} {'repo' if language_count[lang]['count'] == 1 else 'repos'}" for lang in names]
     percents = [round(language_count[lang]["count"] / len(repos_with_language) * 100, 2) for lang in names]
 
-    top_language = max(list(language_count.keys()), key=lambda x: language_count[x]["count"])
-    title = f"**{FM.t('I Mostly Code in') % top_language}** \n\n" if len(repos_with_language) > 0 else ""
+    if language_count:
+        top_language = max(language_count.keys(), key=lambda x: language_count[x]["count"])
+        title = f"**{FM.t('I Mostly Code in') % top_language}** \n\n"
+    else:
+        title = ""
     return f"{title}```text\n{make_list(names=names, texts=texts, percents=percents)}\n```\n\n"
