@@ -5,6 +5,7 @@ from random import choice
 from re import sub
 from shutil import copy, rmtree
 from string import ascii_letters
+from urllib.parse import quote
 
 from git.exc import GitCommandError
 from git import Repo, Actor
@@ -78,7 +79,8 @@ class GitHubManager:
             else:
                 DBM.i("PUSH_TOKEN is identical to GH_TOKEN. Skipping extra verification.")
 
-        GitHubManager._REPO_PATH = f"https://{push_token}@github.com/{GitHubManager._REMOTE_NAME}.git"
+        # Provide both a username and password so Git never needs an interactive credential prompt.
+        GitHubManager._REPO_PATH = f"https://x-access-token:{quote(push_token, safe='')}@github.com/{GitHubManager._REMOTE_NAME}.git"
 
         # In DEBUG_RUN mode, nothing is pushed nor run
         if EM.DEBUG_RUN:

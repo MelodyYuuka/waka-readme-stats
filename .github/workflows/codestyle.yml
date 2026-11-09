@@ -25,5 +25,8 @@ jobs:
       - name: Install Dependencies 📥
         run: pip install -r requirements.txt
 
+      - name: Run Offline Regression Tests
+        run: python -B -m unittest discover -s tests -v
+
       - name: Run Codestyle ✔️
         run: flake8 --max-line-length=160 --exclude venv,assets . && black --line-length=160 --check --exclude='/venv/|/assets/' .
